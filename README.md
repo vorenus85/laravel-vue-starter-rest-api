@@ -1,4 +1,4 @@
-# Laravel + PrimeVue Starter Kit
+# Laravel + PrimeVue Starter Kit Rest api based
 
 ## 🚀 1. System Requirements
 
@@ -16,7 +16,7 @@
 ### 2.1 Clone the repository
 
 ```bash
-git clone https://github.com/vorenus85/laravel-vue-starter
+git clone https://github.com/vorenus85/laravel-vue-starter-rest-api
 cd laravel-vue-starter
 ```
 
@@ -82,22 +82,22 @@ npm run dev
 
 ## 🌐 5. Local Domain Configuration (optional)
 
-To access the project via a custom local domain (e.g. laravel-vue-starter.local):
+To access the project via a custom local domain (e.g. laravel-vue-starter-api.local):
 
 ### Edit your hosts file
 
 ```lua
-127.0.0.1    laravel-vue-starter.local
+127.0.0.1    laravel-vue-starter-api.local
 ```
 
 ### Create an Apache VirtualHost
 
 ```apache
 <VirtualHost *:80>
-    ServerName laravel-vue-starter.local
-    DocumentRoot "C:/wamp64/www/git/laravel-vue-starter/public"
+    ServerName laravel-vue-starter-api.local
+    DocumentRoot "C:/wamp64/www/git/laravel-vue-starter-rest-api/public"
 
-    <Directory "C:/wamp64/www/git/laravel-vue-starter/public">
+    <Directory "C:/wamp64/www/git/laravel-vue-starter-rest-api/public">
         AllowOverride All
         Require all granted
         Options Indexes FollowSymLinks
@@ -108,7 +108,7 @@ To access the project via a custom local domain (e.g. laravel-vue-starter.local)
 ### Update .env
 
 ```env
-APP_URL=http://laravel-vue-starter.local
+APP_URL=http://laravel-vue-starter-api.local
 ```
 
 ## 🧪 6. Run Tests
