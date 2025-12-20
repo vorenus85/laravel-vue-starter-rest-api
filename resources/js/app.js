@@ -1,27 +1,22 @@
-// import './bootstrap';
+import './bootstrap'
 
-import { createApp, h } from 'vue'
-import { createInertiaApp } from '@inertiajs/vue3'
+import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
 import Aura from '@primeuix/themes/aura'
 
-const pinia = createPinia()
+// Your main App.vue
+import App from './App.vue'
+import router from './router'
 
-createInertiaApp({
-    resolve: name => {
-        const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
-        return pages[`./Pages/${name}.vue`]
-    },
-    setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
-            .use(plugin)
-            .use(pinia)
-            .use(PrimeVue, {
-                theme: {
-                    preset: Aura,
-                },
-            })
-            .mount(el)
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(PrimeVue, {
+    theme: {
+        preset: Aura,
     },
 })
+app.use(router)
+
+app.mount('#app')

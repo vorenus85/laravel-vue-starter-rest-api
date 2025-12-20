@@ -1,7 +1,7 @@
 <template>
     <AppLayout>
-        <h2 class="text-2xl font-bold">Welcome 👋</h2>
-        <p class="mt-2 text-gray-600">Az AppLayout működik 🎉</p>
+        <h2 class="text-2xl font-bold">About page</h2>
+        <p class="mt-2 text-gray-600">AppLayout works 🎉</p>
         <Button label="PrimeVue OK" icon="pi pi-check" />
     </AppLayout>
 </template>

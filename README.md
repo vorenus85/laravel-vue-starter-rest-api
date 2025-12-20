@@ -17,7 +17,7 @@
 
 ```bash
 git clone https://github.com/vorenus85/laravel-vue-starter-rest-api
-cd laravel-vue-starter
+cd laravel-vue-starter-rest-api
 ```
 
 ### 2.2 Install PHP dependencies
