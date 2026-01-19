@@ -12,6 +12,7 @@
 - **Node.js >= 22 & npm**
 - **MySQL / PostgreSQL / SQLite**
 - **Git**
+- **Docker**
 - _(Optional)_ WAMP / XAMPP for local hosting
 
 ---
