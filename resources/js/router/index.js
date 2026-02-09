@@ -1,13 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-import HomePage from '../Pages/HomePage.vue'
-import AboutPage from '../Pages/AboutPage.vue'
+import DashboardPage from '@/pages/DashboardPage.vue'
+import SettingsPage from '@/pages/SettingsPage.vue'
+import NotFoundPage from '@/pages/NotFoundPage.vue'
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', name: 'home', component: HomePage },
-        { path: '/about', name: 'about', component: AboutPage },
+        { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFoundPage },
+        {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: DashboardPage,
+        },
+        {
+            path: '/settings',
+            name: 'settings',
+            component: SettingsPage,
+        },
     ],
 })
 

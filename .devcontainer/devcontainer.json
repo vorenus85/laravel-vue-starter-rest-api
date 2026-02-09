@@ -1,23 +1,21 @@
 {
-  "name": "Laravel Vue Vite Dev",
-  "dockerComposeFile": "../docker-compose.yml",
-  "service": "app",
-  "workspaceFolder": "/var/www",
+    "name": "Laravel Vue Starter REST API",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/var/www",
+    "extensions": [
+        "Vue.volar",
+        "typescript-language-features",
 
-  "extensions": [
-    "bmewburn.vscode-intelephense-client",
-    "junstyle.php-cs-fixer",
-    "sanderronde.phpstan-vscode",
-    "onecentlin.laravel-blade",
-    "laravel.vscode-laravel",
-    "georgykurian.laravel-ide-helper",
-    "vue.volar",
-    "hollowtree.vue-snippets",
-    "esbenp.prettier-vscode",
-    "editorconfig.editorconfig",
-    "eamodio.gitlens",
-    "solomonkinard.git-blame",
-    "sonarsource.sonarlint-vscode",
-    "github.vscode-github-actions"
-  ]
+        "bmewburn.vscode-intelephense-client",
+        "junstyle.php-cs-fixer",
+        "sanderronde.phpstan-vscode",
+        "onecentlin.laravel-blade",
+        "laravel.vscode-laravel",
+        "georgykurian.laravel-ide-helper",
+
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "eamodio.gitlens"
+    ]
 }
