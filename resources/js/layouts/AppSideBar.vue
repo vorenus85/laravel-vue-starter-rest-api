@@ -25,5 +25,10 @@ const menus = [
         routeName: 'settings',
         title: 'Settings',
     },
+    {
+        icon: 'sign-out',
+        routeName: 'logout',
+        title: 'Logout',
+    },
 ]
 </script>
