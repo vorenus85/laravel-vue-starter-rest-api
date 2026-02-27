@@ -20,7 +20,7 @@
 <script setup>
 import UiIcon from '@/components/UiIcon.vue'
 import LogoIcon from '@/components/LogoIcon.vue'
-import { useLayoutStore } from '@/stores/layout'
+import { useLayoutStore } from '@/stores/useLayoutStore'
 
 const layoutStore = useLayoutStore()
 </script>

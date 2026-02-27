@@ -29,6 +29,7 @@ class UserController extends Controller
         $request->validate([
             "name" => "string|required",
             "phone" => "nullable|string",
+            "password" => "nullable|string",
             "email" => "string|required|email|unique:users,email",
         ], [
             'email.unique' => 'This email already exists.'
@@ -37,6 +38,7 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'phone' => $request->phone,
+            'password' => $request->password,
             'active' => true,
             'email' => $request->email
         ]);

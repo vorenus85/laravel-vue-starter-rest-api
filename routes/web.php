@@ -17,6 +17,8 @@ Route::get('/auth/check', function () {
     ]);
 });
 
+Route::post('/api/register', [UserController::class, 'store']);
+
 Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('/api/admin/users')->group(function(){
         Route::get('/', [UserController::class, 'index']);

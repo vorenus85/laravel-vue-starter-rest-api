@@ -23,3 +23,7 @@ export const updateUserById = (id, values) => {
 export const toggleUserActive = id => {
     return axios.put(`/api/admin/users/${id}/toggle-active`)
 }
+
+export const registerVisitor = values => {
+    return axios.post('/api/register', values)
+}
