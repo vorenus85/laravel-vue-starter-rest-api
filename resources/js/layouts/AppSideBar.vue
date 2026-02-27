@@ -27,8 +27,8 @@ const menus = [
     },
     {
         icon: 'cog',
-        routeName: 'settings',
-        title: 'Settings',
+        routeName: 'account',
+        title: 'Account',
     },
     {
         icon: 'sign-out',
