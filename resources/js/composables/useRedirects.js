@@ -7,7 +7,17 @@ export const useRedirects = () => {
         router.push({ name: 'dashboard' })
     }
 
+    const toCreateUser = () => {
+        router.push({ name: 'users.create' })
+    }
+
+    const toUsersList = () => {
+        router.push({ name: 'users' })
+    }
+
     return {
         toDashboard,
+        toCreateUser,
+        toUsersList,
     }
 }

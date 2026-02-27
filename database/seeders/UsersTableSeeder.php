@@ -21,6 +21,20 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make(env('ADMIN_USER_PWD')),
         ]);
 
+        $json = File::get(database_path('data/users.json'));
+        $users = json_decode($json, true);
+
+        // Populate with data
+        foreach ($users as $user) {
+           User::create([
+                'name' => $user['name'],
+                'email' => $user['email'],
+                'phone' => $user['phone'],
+                'active' => $user['active'],
+                'password' => Hash::make(strtolower($user['name'])),
+            ]);
+        }
+
         $this->command->info('Users data seeded successfully!');
     }
 }

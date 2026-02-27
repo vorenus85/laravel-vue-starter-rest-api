@@ -5,6 +5,10 @@ import SettingsPage from '@/pages/SettingsPage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
 import LoginPage from '@/pages/LoginPage.vue'
 
+import UserListPage from '@/pages/User/ListPage.vue'
+import UserCreatePage from '@/pages/User/CreatePage.vue'
+import UserEditPage from '@/pages/User/EditPage.vue'
+
 import { useAuthStore } from '@/stores/auth'
 
 const router = createRouter({
@@ -12,6 +16,30 @@ const router = createRouter({
     routes: [
         { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFoundPage },
         { path: '/', name: 'login', component: LoginPage },
+        {
+            path: '/users',
+            name: 'users',
+            component: UserListPage,
+            meta: {
+                requiresAuth: true,
+            },
+        },
+        {
+            path: '/users/create',
+            name: 'users.create',
+            component: UserCreatePage,
+            meta: {
+                requiresAuth: true,
+            },
+        },
+        {
+            path: '/users/:id',
+            name: 'users.show',
+            component: UserEditPage,
+            meta: {
+                requiresAuth: true,
+            },
+        },
         {
             path: '/dashboard',
             name: 'dashboard',
