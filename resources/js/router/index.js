@@ -7,6 +7,8 @@ import LoginPage from '@/pages/Auth/LoginPage.vue'
 
 import AcountProfilePage from '@/pages/Account/ProfilePage.vue'
 import AccountPasswordPage from '@/pages/Account/PasswordPage.vue'
+import ForgotPasswordPage from '@/pages/Auth/ForgotPasswordPage.vue'
+import ResetPasswordPage from '@/pages/Auth/ResetPasswordPage.vue'
 
 import UserListPage from '@/pages/User/ListPage.vue'
 import UserCreatePage from '@/pages/User/CreatePage.vue'
@@ -17,15 +19,18 @@ import { useAuthStore } from '@/stores/useAuthStore'
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFoundPage },
         { path: '/', name: 'login', component: LoginPage },
+        { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFoundPage },
+        { path: '/register', name: 'register', component: RegisterPage },
+        { path: '/forgot-password', name: 'forgot-password', component: ForgotPasswordPage },
+        { path: '/reset-password', name: 'reset-password', component: ResetPasswordPage },
         {
             path: '/login',
             redirect: () => {
                 return { path: '/' }
             },
         },
-        { path: '/register', name: 'register', component: RegisterPage },
+
         {
             path: '/account',
             name: 'account',
