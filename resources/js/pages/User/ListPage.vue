@@ -16,7 +16,6 @@
                 :loading="loading"
                 :global-filter-fields="['name', 'email', 'phone']"
                 data-key="id"
-                :row-class="rowClass"
                 ><template #header>
                     <div class="flex justify-start gap-5">
                         <Button
@@ -96,12 +95,12 @@ import { useCustomConfirm } from '@/composables/useCustomConfirm'
 import { useUser } from '@/composables/useUser.js'
 import { useRedirects } from '@/composables/useRedirects.js'
 import { FilterMatchMode, FilterOperator } from '@primevue/core/api'
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const filters = ref()
 const confirm = useConfirm()
 const { confirmAction } = useCustomConfirm()
-const { loading, users, allUsers, getUsers, deleteUser, toggleActive, selectedRole } = useUser()
+const { loading, users, getUsers, deleteUser, toggleActive } = useUser()
 const { toCreateUser } = useRedirects()
 
 const initFilters = () => {

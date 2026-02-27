@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
-import { getCsrfCookie, fetchUser, doLogout, doLogin } from '@/services/authService'
+import { fetchMe } from '@/services/accountService'
+import { getCsrfCookie, doLogout, doLogin } from '@/services/authService'
 
 export const useAuthStore = defineStore('auth', {
     state: () => ({
@@ -9,7 +10,7 @@ export const useAuthStore = defineStore('auth', {
     actions: {
         async fetchUser() {
             try {
-                const res = await fetchUser()
+                const res = await fetchMe()
                 this.user = res?.data
                 this.loaded = true
             } catch {

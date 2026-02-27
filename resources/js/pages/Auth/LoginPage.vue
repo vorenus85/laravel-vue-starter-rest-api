@@ -58,6 +58,7 @@
                                     class="flex flex-col gap-1"
                                 >
                                     <Password
+                                        input-id="password"
                                         type="text"
                                         placeholder="Password"
                                         :feedback="false"
@@ -75,6 +76,10 @@
                             </div>
                             <Button type="submit" label="Log in" />
                         </Form>
+                        <div class="text-center">
+                            <span class="text-muted-color mr-1"> Don't have an account? </span>
+                            <RouterLink to="register" class="font-semibold">Sign Up</RouterLink>
+                        </div>
                     </div>
                 </template>
             </Card>
@@ -86,7 +91,7 @@ import UiIcon from '@/components/UiIcon.vue'
 import LogoIcon from '@/components/LogoIcon.vue'
 import { Form, FormField } from '@primevue/forms'
 import { Button, Card, InputText, Message, Password, Tag } from 'primevue'
-import { useAuthStore } from '@/stores/auth'
+import { useAuthStore } from '@/stores/useAuthStore'
 import { useAuth } from '@/composables/useAuth'
 import { useToast } from 'primevue/usetoast'
 import { useRedirects } from '@/composables/useRedirects'

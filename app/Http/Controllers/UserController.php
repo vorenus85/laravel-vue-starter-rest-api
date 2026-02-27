@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Notifications\UserCreatedNotification;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -29,6 +30,7 @@ class UserController extends Controller
         $request->validate([
             "name" => "string|required",
             "phone" => "nullable|string",
+            "password" => "nullable|string",
             "email" => "string|required|email|unique:users,email",
         ], [
             'email.unique' => 'This email already exists.'
@@ -37,9 +39,12 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'phone' => $request->phone,
+            'password' => $request->password,
             'active' => true,
             'email' => $request->email
         ]);
+
+        $user->notify(new UserCreatedNotification($user));
 
         return response()->json($user, 201);
     }

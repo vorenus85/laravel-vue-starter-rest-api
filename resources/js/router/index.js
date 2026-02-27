@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import DashboardPage from '@/pages/DashboardPage.vue'
-import SettingsPage from '@/pages/SettingsPage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
-import LoginPage from '@/pages/LoginPage.vue'
+import RegisterPage from '@/pages/Auth/RegisterPage.vue'
+import LoginPage from '@/pages/Auth/LoginPage.vue'
 
 import AcountProfilePage from '@/pages/Account/ProfilePage.vue'
 import AccountPasswordPage from '@/pages/Account/PasswordPage.vue'
@@ -12,13 +12,20 @@ import UserListPage from '@/pages/User/ListPage.vue'
 import UserCreatePage from '@/pages/User/CreatePage.vue'
 import UserEditPage from '@/pages/User/EditPage.vue'
 
-import { useAuthStore } from '@/stores/auth'
+import { useAuthStore } from '@/stores/useAuthStore'
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFoundPage },
         { path: '/', name: 'login', component: LoginPage },
+        {
+            path: '/login',
+            redirect: () => {
+                return { path: '/' }
+            },
+        },
+        { path: '/register', name: 'register', component: RegisterPage },
         {
             path: '/account',
             name: 'account',
@@ -73,14 +80,6 @@ const router = createRouter({
             path: '/dashboard',
             name: 'dashboard',
             component: DashboardPage,
-            meta: {
-                requiresAuth: true,
-            },
-        },
-        {
-            path: '/settings',
-            name: 'settings',
-            component: SettingsPage,
             meta: {
                 requiresAuth: true,
             },

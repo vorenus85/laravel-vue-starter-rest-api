@@ -16,7 +16,7 @@
 <script setup>
 import AppTopBar from '@/layouts/AppTopBar.vue'
 import AppSideBar from '@/layouts/AppSideBar.vue'
-import { useLayoutStore } from '@/stores/layout'
+import { useLayoutStore } from '@/stores/useLayoutStore'
 import { useLayout } from '@/composables/useLayout'
 import { onBeforeRouteLeave } from 'vue-router'
 
