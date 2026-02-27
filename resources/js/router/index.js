@@ -19,6 +19,12 @@ const router = createRouter({
     routes: [
         { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFoundPage },
         { path: '/', name: 'login', component: LoginPage },
+        {
+            path: '/login',
+            redirect: () => {
+                return { path: '/' }
+            },
+        },
         { path: '/register', name: 'register', component: RegisterPage },
         {
             path: '/account',

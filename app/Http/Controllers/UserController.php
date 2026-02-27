@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Notifications\UserCreatedNotification;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -42,6 +43,8 @@ class UserController extends Controller
             'active' => true,
             'email' => $request->email
         ]);
+
+        $user->notify(new UserCreatedNotification($user));
 
         return response()->json($user, 201);
     }
