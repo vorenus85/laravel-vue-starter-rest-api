@@ -22,6 +22,12 @@ services:
         depends_on:
             - app
 
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+            - '8025:8025'
+            - '1025:1025'
+
     db:
         image: mysql:8.0
         environment:
