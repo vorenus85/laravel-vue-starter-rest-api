@@ -5,6 +5,9 @@ import SettingsPage from '@/pages/SettingsPage.vue'
 import NotFoundPage from '@/pages/NotFoundPage.vue'
 import LoginPage from '@/pages/LoginPage.vue'
 
+import AcountProfilePage from '@/pages/Account/ProfilePage.vue'
+import AccountPasswordPage from '@/pages/Account/PasswordPage.vue'
+
 import UserListPage from '@/pages/User/ListPage.vue'
 import UserCreatePage from '@/pages/User/CreatePage.vue'
 import UserEditPage from '@/pages/User/EditPage.vue'
@@ -16,6 +19,32 @@ const router = createRouter({
     routes: [
         { path: '/:pathMatch(.*)*', name: 'notFound', component: NotFoundPage },
         { path: '/', name: 'login', component: LoginPage },
+        {
+            path: '/account',
+            name: 'account',
+            redirect: () => {
+                return { path: '/account/profile' }
+            },
+            meta: {
+                requiresAuth: true,
+            },
+        },
+        {
+            path: '/account/profile',
+            name: 'profile',
+            component: AcountProfilePage,
+            meta: {
+                requiresAuth: true,
+            },
+        },
+        {
+            path: '/account/password',
+            name: 'password',
+            component: AccountPasswordPage,
+            meta: {
+                requiresAuth: true,
+            },
+        },
         {
             path: '/users',
             name: 'users',

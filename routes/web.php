@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
@@ -24,6 +25,12 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/{user}', [UserController::class, 'update']);
         Route::delete('/{user}', [UserController::class, 'destroy']);
         Route::put('/{user}/toggle-active', [UserController::class, 'toggleActive']);
+    });
+
+     Route::prefix('/api/admin/account')->group(function(){
+        Route::get('/me', [AccountController::class, 'show']);
+        Route::put('/me', [AccountController::class, 'update']);
+        Route::put('/password', [AccountController::class, 'changePassword']);
     });
 });
 
