@@ -21,6 +21,11 @@ const menus = [
         title: 'Dashboard',
     },
     {
+        icon: 'users',
+        routeName: 'users',
+        title: 'Users',
+    },
+    {
         icon: 'cog',
         routeName: 'settings',
         title: 'Settings',

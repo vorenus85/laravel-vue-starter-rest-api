@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +17,14 @@ Route::get('/auth/check', function () {
 });
 
 Route::middleware('auth:sanctum')->group(function () {
-
+    Route::prefix('/api/admin/users')->group(function(){
+        Route::get('/', [UserController::class, 'index']);
+        Route::post('/', [UserController::class, 'store']);
+        Route::get('/{user}', [UserController::class, 'show']);
+        Route::put('/{user}', [UserController::class, 'update']);
+        Route::delete('/{user}', [UserController::class, 'destroy']);
+        Route::put('/{user}/toggle-active', [UserController::class, 'toggleActive']);
+    });
 });
 
 Route::get('{any}', function () {
