@@ -142,6 +142,8 @@ From the project root directory:
 docker compose up -d
 ```
 
+On first start the `app` container now installs missing PHP dependencies automatically if `vendor/` is not present yet.
+
 ### Install dependencies
 
 Backend (Laravel / PHP):
