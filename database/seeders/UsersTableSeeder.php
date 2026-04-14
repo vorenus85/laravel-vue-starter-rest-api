@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,13 +26,13 @@ class UsersTableSeeder extends Seeder
 
         // Populate with data
         foreach ($users as $user) {
-           User::create([
-                'name' => $user['name'],
-                'email' => $user['email'],
-                'phone' => $user['phone'],
-                'active' => $user['active'],
-                'password' => Hash::make(strtolower($user['name'])),
-            ]);
+            User::create([
+                 'name' => $user['name'],
+                 'email' => $user['email'],
+                 'phone' => $user['phone'],
+                 'active' => $user['active'],
+                 'password' => Hash::make(strtolower($user['name'])),
+             ]);
         }
 
         $this->command->info('Users data seeded successfully!');

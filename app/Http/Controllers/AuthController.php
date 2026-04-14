@@ -17,7 +17,7 @@ class AuthController extends Controller
             'password' => ['required'],
         ]);
 
-         $credentials['active'] = 1;
+        $credentials['active'] = 1;
 
         if (! Auth::attempt($credentials)) {
             return response()->json(['message' => 'Invalid credentials'], 401);
@@ -49,7 +49,7 @@ class AuthController extends Controller
         );
 
         return response()->json([
-            'message' => 'We have emailed your password reset link.'
+            'message' => 'We have emailed your password reset link.',
         ]);
     }
 
@@ -75,7 +75,7 @@ class AuthController extends Controller
         }
 
         return response()->json([
-            'message' => 'Invalid token'
+            'message' => 'Invalid token',
         ], 400);
     }
 

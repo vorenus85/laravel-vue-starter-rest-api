@@ -13,7 +13,7 @@ Route::post('/auth/reset-password', [AuthController::class, 'reset']);
 Route::post('/api/register', [UserController::class, 'store']);
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::prefix('/api/admin/users')->group(function(){
+    Route::prefix('/api/admin/users')->group(function () {
         Route::get('/', [UserController::class, 'index']);
         Route::post('/', [UserController::class, 'store']);
         Route::get('/{user}', [UserController::class, 'show']);
@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/{user}/toggle-active', [UserController::class, 'toggleActive']);
     });
 
-     Route::prefix('/api/admin/account')->group(function(){
+    Route::prefix('/api/admin/account')->group(function () {
         Route::get('/me', [AccountController::class, 'show']);
         Route::put('/me', [AccountController::class, 'update']);
         Route::put('/password', [AccountController::class, 'changePassword']);
