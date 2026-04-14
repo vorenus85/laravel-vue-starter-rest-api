@@ -3,7 +3,6 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -17,7 +16,7 @@ class UserCreatedNotification extends Notification
     public function __construct(public $user)
     {
         //
-         $this->user = $user;
+        $this->user = $user;
     }
 
     /**
@@ -35,13 +34,13 @@ class UserCreatedNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-         return (new MailMessage)
-            ->subject('Your Account Has Been Created')
-            ->greeting('Welcome!')
-            ->line('Your account has been successfully created.')
-            ->line('You can now log in and start using the application.')
-            ->action('Go to Login', config('app.frontend_url') . '/login')
-            ->line('If you did not expect this email, please contact support.');
+        return (new MailMessage())
+           ->subject('Your Account Has Been Created')
+           ->greeting('Welcome!')
+           ->line('Your account has been successfully created.')
+           ->line('You can now log in and start using the application.')
+           ->action('Go to Login', config('app.frontend_url') . '/login')
+           ->line('If you did not expect this email, please contact support.');
     }
 
     /**

@@ -33,7 +33,7 @@ class UserController extends Controller
             "password" => "nullable|string",
             "email" => "string|required|email|unique:users,email",
         ], [
-            'email.unique' => 'This email already exists.'
+            'email.unique' => 'This email already exists.',
         ]);
 
         $user = User::create([
@@ -41,7 +41,7 @@ class UserController extends Controller
             'phone' => $request->phone,
             'password' => $request->password,
             'active' => true,
-            'email' => $request->email
+            'email' => $request->email,
         ]);
 
         $user->notify(new UserCreatedNotification($user));
@@ -55,7 +55,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         //
-        $query = User::where("id",$user->id);
+        $query = User::where("id", $user->id);
 
         return response()->json($query->first());
     }
@@ -72,7 +72,7 @@ class UserController extends Controller
             "active" => "boolean",
             "email" => "string|required|email|unique:users,email," . $user->id,
         ], [
-            'email.unique' => 'This email already exists.'
+            'email.unique' => 'This email already exists.',
         ]);
 
         $user->update($request->all());
@@ -83,7 +83,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-     public function destroy(User $user)
+    public function destroy(User $user)
     {
         $user->delete();
         return response()->json(null, 204);

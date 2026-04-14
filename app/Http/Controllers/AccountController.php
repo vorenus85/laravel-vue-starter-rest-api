@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Hash;
 class AccountController extends Controller
 {
     //
-     public function show()
+    public function show()
     {
         //
-        $user  = $user = Auth::user();
+        $user = $user = Auth::user();
 
         return response()->json($user);
     }
@@ -23,22 +23,22 @@ class AccountController extends Controller
     public function update(Request $request)
     {
         //
-        $user  = $user = Auth::user();
+        $user = $user = Auth::user();
 
-         $request->validate([
+        $request->validate([
             "name" => "string|required",
             "phone" => "nullable|string",
             "email" => "string|required|email|unique:users,email," . $user->id,
         ], [
-            'email.unique' => 'This email already exists.'
+            'email.unique' => 'This email already exists.',
         ]);
 
-         $user->update($request->all());
+        $user->update($request->all());
 
         return response()->json($user);
     }
 
-    public function changePassword (Request $request)
+    public function changePassword(Request $request)
     {
 
 
@@ -47,15 +47,14 @@ class AccountController extends Controller
             "password" => ["required", "string", "min:8", "confirmed"],
         ]);
 
-        $user  = $user = Auth::user();
+        $user = $user = Auth::user();
 
         $user->update([
             'password' => Hash::make($request->password),
         ]);
 
         return response()->json([
-            "message" => "Password changed successfully."
+            "message" => "Password changed successfully.",
         ], 201);
     }
-
 }

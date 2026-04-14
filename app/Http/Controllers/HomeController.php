@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     public function index()
@@ -18,7 +16,7 @@ class HomeController extends Controller
                 'Pinia',
                 'PrimeVue',
                 'REST API structure',
-            ]
+            ],
         ]);
     }
 }
