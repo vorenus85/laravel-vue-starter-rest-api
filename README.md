@@ -7,7 +7,7 @@
 
 ## 🚀 1. System Requirements
 
-- **PHP >= 8.5**
+- **PHP >= 8.4**
 - **Composer >= 2.0**
 - **Node.js >= 22 & npm**
 - **MySQL / PostgreSQL / SQLite**
