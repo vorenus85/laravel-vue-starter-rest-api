@@ -16,12 +16,12 @@
         "php": "^8.4",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.3",
-        "laravel/tinker": "^2.10.1"
+        "laravel/tinker": "^2.10.1",
+        "fakerphp/faker": "^1.23"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.16",
         "barryvdh/laravel-ide-helper": "^3.6",
-        "fakerphp/faker": "^1.23",
         "larastan/larastan": "^3.8",
         "friendsofphp/php-cs-fixer": "^3.94",
         "laravel/pail": "^1.2.2",
