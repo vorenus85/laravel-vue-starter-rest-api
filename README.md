@@ -1,5 +1,7 @@
 # Laravel + PrimeVue Starter Kit Rest api based
 
+This Laravel + Vue 3 starter project is built to accelerate the development of modern, scalable REST API applications. It combines a structured backend with a flexible frontend powered by the Vue Composition API. The project includes essential tooling, best practices, and a clean architecture out of the box. It’s an ideal foundation for building maintainable full-stack applications without wasting time on initial setup.
+
 ## 🚀 1. System Requirements
 
 ### ✅ Recommended (Docker-based setup)
